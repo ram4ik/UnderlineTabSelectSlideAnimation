@@ -27,15 +27,13 @@ struct ContentView: View {
                                 Text(category)
                                     .font(.system(size: 18))
                                     .fontWeight(.semibold)
-                                if selectedCategory == category {
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .frame(width: 40, height: 2)
-                                        .matchedGeometryEffect(id: "category", in: animation)
-                                }
+                                    .matchedGeometryEffect(id: category, in: animation, isSource: true)
                             }
                         })
                         .accentColor(.primary)
-                    }
+                    }.overlay(RoundedRectangle(cornerRadius: 5)
+                                .frame(height: 2)
+                                .matchedGeometryEffect(id: selectedCategory, in: animation, isSource: false))
                 }
             }
             Spacer()
