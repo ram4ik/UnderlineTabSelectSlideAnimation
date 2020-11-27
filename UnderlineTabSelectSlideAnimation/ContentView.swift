@@ -35,7 +35,7 @@ struct ContentView: View {
                                 .frame(height: 2)
                                 .matchedGeometryEffect(id: selectedCategory, in: animation, isSource: false))
                 }
-            }
+            }.padding()
             Spacer()
         }
         .navigationBarTitle("Groceries")
